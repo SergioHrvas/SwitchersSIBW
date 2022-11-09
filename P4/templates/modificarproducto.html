@@ -1,0 +1,54 @@
+{% extends "padre.html" %}
+{% block estilos %}
+<!--LINKS CSS-->
+<link rel="stylesheet" type="text/css" href="status/css/login.css">
+<link rel="stylesheet" type="text/css" href="status/css/admin.css">
+
+{% endblock %}
+{%block central %}
+
+<!-- Contenido principal -->
+<section class="principal">
+    <h1 class="tituloseccion">Modificar Producto</h1>
+    <div class="formulario">
+        <form id="formulariocomentarios" action="./modificarproducto/{{producto['link']}}" method="post" enctype="multipart/form-data">
+            <img class="portadamodificar" src="./status/image/portadas/{{producto['portada']}}" alt=""/>
+            <label for="portada" class="etiqueta">Imagen de portada</label>
+            <input type="file" class="inputtext" name="portada">
+            <label for="titulojuego" class="etiqueta">Título del juego</label>
+            <input id="titulojuego" class="inputtext" name="titulojuego" value="{{producto['titulo']}}">
+            <label for="descripcion" class="etiqueta">Descripción</label>
+            <textarea id="descripcion" class="inputtext" name="descripcion">{{producto['descripcion']}}</textarea>
+            <label for="preciojuego" class="etiqueta">Precio</label>
+            <input id="preciojuego" class="inputtext" name="preciojuego" value="{{producto['precio']}}">
+            <label for="video" class="etiqueta">Vídeo</label>
+            <input id="video" class="inputtext" name="video" value="{{producto['video']}}">
+            <label for="fecha" class="etiqueta">Fecha de lanzamiento</label>
+            <input id="fecha" class="inputtext" name="fecha" value="{{producto['fecha']}}">
+            <label for="genero" class="etiqueta">Género</label>
+            <input id="genero" class="inputtext" name="genero" value="{{producto['genero']}}">
+            <label for="plataforma" class="etiqueta">Plataforma</label>
+            <input id="plataforma" class="inputtext" name="plataforma" value="{{producto['plataforma']}}">
+            <label for="desarrollador" class="etiqueta">Desarrollador</label>
+            <input id="desarrollador" class="inputtext" name="desarrollador" value="{{producto['desarrollador']}}">
+            <label for="puntuacion" class="etiqueta">Puntuación</label>
+            <input id="puntuacion" class="inputtext" name="puntuacion" value="{{producto['puntuacion']}}">
+            <label for="web" class="etiqueta">Web</label>
+            <input id="web" class="inputtext" name="web" value="{{producto['web']}}">
+            <label for="masinfo" class="etiqueta">Más Info</label>
+            <input id="masinfo" class="inputtext" name="masinfo" value="{{producto['masinfo']}}">
+            <label for="facebook" class="etiqueta">Facebook</label>
+            <input id="facebook" class="inputtext" name="facebook" value="{{producto['facebook']}}">
+            <label for="twitter" class="etiqueta">Twitter</label>
+            <input id="twitter" class="inputtext" name="twitter" value="{{producto['twitter']}}">
+            <label for="instagram" class="etiqueta">Instagram</label>
+            <input id="instagram" class="inputtext" name="instagram" value="{{producto['instagram']}}">
+            <label for="link" class="etiqueta">Link</label> <span class="error"></span>
+            <input id="link" class="inputtext" name="link" value="{{producto['link']}}">
+
+            <button type="submit" id="enviar">Enviar</button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

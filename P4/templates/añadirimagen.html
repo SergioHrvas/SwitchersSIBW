@@ -1,0 +1,21 @@
+{% extends "padre.html" %}
+{% block estilos %}
+<!--LINKS CSS-->
+<link rel="stylesheet" type="text/css" href="status/css/login.css">
+{% endblock %}
+{%block central %}
+
+<!-- Contenido principal -->
+<section class="principal">
+    <h1 class="tituloseccion">Añadir Imagen</h1>
+    <div class="formulario">
+        <form id="formulariocomentarios" action="añadirimagen/{{link}}" method="post" enctype="multipart/form-data">
+            <label for="imagenes" class="etiqueta">Imagenes</label>
+            <input type="file" class="inputtext" name="imagenes[]" multiple="multiple">
+
+            <button type="submit" id="enviar">Enviar</button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

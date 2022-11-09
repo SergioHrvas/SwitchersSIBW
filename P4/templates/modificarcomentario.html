@@ -1,0 +1,26 @@
+{% extends "padre.html" %}
+{% block estilos %}
+<!--LINKS CSS-->
+<link rel="stylesheet" type="text/css" href="status/css/login.css">
+<link rel="stylesheet" type="text/css" href="status/css/perfil.css">
+
+{% endblock %}
+{%block central %}
+
+<!-- Contenido principal -->
+<section class="principal">
+    <h1 class="tituloseccion">Modificar Comentario</h1>
+    <div class="formulario">
+        <form id="formulariocomentarios" action="modificarcomentario/{{comentario[0]['id']}}" method="post">
+            <label for="titulo" class="etiqueta">Título</label>
+            <input id="username" class="inputtext" name="titulo" value="{{comentario[0]['titulo']}}">
+            <label for="comentario" class="etiqueta">Comentario</label>
+            <textarea id="descripcion" maxlength="1000" name="descripcion">{{comentario[0]['comentario']}}</textarea>
+            <span id="contador"></span>
+
+            <button type="submit" id="enviar">Enviar</button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}
